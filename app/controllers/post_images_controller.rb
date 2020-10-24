@@ -21,17 +21,24 @@ class PostImagesController < ApplicationController
   end
 
   def edit
+    @post_image = PostImage.find(params[:id])
   end
 
   def update
+    @post_image = PostImage.find(params[:id])
+    @post_image.update(post_image_params)
+    redirect_to post_image_path
   end
 
   def destroy
+    @post_image = PostImage.find(params[:id])
+    @post_image.destroy
+    redirect_to post_images_path
   end
 
   private
   def post_image_params
-    params.require(:post_image).permit(:picture_name, :image, :caption)
+    params.require(:post_image).permit(:picture_name, :image, :caption, :title )
   end
 
 end

@@ -3,19 +3,21 @@
 <table>
   <thead>
     <tr>
-      <th>Picture</th>
       <th>Name</th>
+      <th>Picture</th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
     <tr>
       <td>
-        <%= attachment_image_tag user, :profile_image_id, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
-      </td>
-      <td>
         <%= user.name %>
       </td>
+      
+      <td>
+        <%= attachment_image_tag user, :profile_image_id, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
+      </td>
+
       <td>
         <%= link_to "Show", "#" %>
       </td>
