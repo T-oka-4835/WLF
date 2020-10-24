@@ -1,8 +1,27 @@
 <h1>We Love FootBall</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
 <% @post_images.each do |post_image| %>
-  <div>
+  <tr>
+  <td>
     <%= attachment_image_tag post_image, :image, :fill, 100, 100, format: 'jpeg' %>
-  </div>
+  </td>
 
+  <td>
+    <%= post_image.user.name %>
+  </td>
+
+  <td>
+    <%= link_to "Show", post_image_path(post_image) %>
+  </td>
+  </tr>
 <% end %>
+</tbody>
+</table>
