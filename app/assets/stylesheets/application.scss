@@ -15,5 +15,22 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
- 
- 
+
+.header-container {
+  height: 60px;
+  width: 100%;
+}
+
+.header-title {
+  font-size: 40px;
+  margin-left: 40px;
+  float: left;
+}
+
+.header-logo {
+  font-size: 30px;
+  float: right;
+  list-style: none;
+  margin-right: 30px;
+}
+
