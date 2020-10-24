@@ -16,33 +16,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: "Meiryo UI";
+}
+
 .header-title {
-  font-size: 40px;
+  font-size: 30px;
   margin-left: 40px;
   float: left;
 }
 
 .header-logo {
-  font-size: 30px;
+  font-size: 20px;
   float: right;
   list-style: none;
   margin-right: 30px;
 }
 
 .cover-all{
-  height: 1500px;
+  height: 1700px;
   width: 100%;
   background-color: black;
 }
 
 .cover-middle {
-  height: 1500px;
+  height: 1700px;
   width: 90%;
   background-color: #FFFAFA;
   margin: 0 auto;
+  border-top: 5px solid black;
 }
 .header-container {
-  height: 50px;
+  height: 40px;
   width: 100%;
 }
 
