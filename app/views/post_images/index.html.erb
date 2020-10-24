@@ -1,0 +1,8 @@
+<h1>We Love FootBall</h1>
+
+<% @post_images.each do |post_image| %>
+  <div>
+    <%= attachment_image_tag post_image, :image, :fill, 100, 100, format: 'jpeg' %>
+  </div>
+
+<% end %>

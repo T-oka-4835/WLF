@@ -26,12 +26,12 @@
       <%= link_to "Post", new_post_image_path %>
     </li>
 
-    <li class="header-logo">
-      <%= link_to "My Page", "#" %>
+     <li class="header-logo">
+      <%= link_to "Usrs", users_path %>
     </li>
 
     <li class="header-logo">
-      <%= link_to "Home", users_path %>
+      <%= link_to "Home", post_images_path %>
     </li>
 
     <% else %>
@@ -53,7 +53,7 @@
 
 <div class="cover-all">
   <div class="cover-middle">
-    
+
     <%= yield %>
 
   </div>

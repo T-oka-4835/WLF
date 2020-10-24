@@ -1,1 +1,18 @@
 <h1>We Love FootBall</h1>
+
+<div>
+<%= attachment_image_tag @post_image, :image %>
+</div>
+
+<div>
+  <%= @post_image.picture_name %>
+</div>
+
+<li>
+  <i class="fa fa-user"></i>By<a href="#">
+  <%= @post_image.user.name %></a>
+</li>
+
+<p>
+  <%= @post_image.caption %>
+</p>
