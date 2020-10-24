@@ -16,11 +16,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.header-container {
-  height: 60px;
-  width: 100%;
-}
-
 .header-title {
   font-size: 40px;
   margin-left: 40px;
@@ -32,5 +27,22 @@
   float: right;
   list-style: none;
   margin-right: 30px;
+}
+
+.cover-all{
+  height: 1500px;
+  width: 100%;
+  background-color: black;
+}
+
+.cover-middle {
+  height: 1500px;
+  width: 90%;
+  background-color: #FFFAFA;
+  margin: 0 auto;
+}
+.header-container {
+  height: 50px;
+  width: 100%;
 }
 

@@ -30,6 +30,10 @@
       <%= link_to "My Page", "#" %>
     </li>
 
+    <li class="header-logo">
+      <%= link_to "Home", users_path %>
+    </li>
+
     <% else %>
 
     <li class="header-logo">
@@ -46,6 +50,13 @@
     </li>
     </ul>
 </div>
+
+<div class="cover-all">
+  <div class="cover-middle">
+    
     <%= yield %>
+
+  </div>
+</div>
   </body>
 </html>

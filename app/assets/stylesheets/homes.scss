@@ -2,27 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
- .cover-all{
-  height: 1500px;
-  width: 100%;
-  background-color: black;
-}
-
-.cover-middle {
-  height: 1500px;
-  width: 90%;
-  background-color: #FFFAFA;
-  margin: 0 auto;
-}
-
 .header-message{
-  color: #555555;
   text-align: center;
 }
 
 .header-picture{
-  margin: 0 auto;
-  width: 70%;
-  height: 450px;
+  width: 60%;
+  height: 350px;
   opacity: 0.6;
 }
+
+.player-picture {
+  width: 30%;
+  height: 30%;
+}
+
+.team-picture {
+  width: 55%;
+  height: 250px;
+}
+
+.memory-picture {
+  width: 60%;
+  height: 350px;
+}
+
