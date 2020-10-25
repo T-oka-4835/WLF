@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @post_image = PostImage.find(params[:id])
+    @user = User.find(params[:id])
+  end
+
+   private
+   def post_image_params
+    params.require(:post_image).permit(:picture_name, :image, :caption, :title )
   end
 end

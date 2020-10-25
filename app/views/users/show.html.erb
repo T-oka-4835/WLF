@@ -1,18 +1,26 @@
 <h1>We Love FootBall</h1>
 
-<div>
-<%= attachment_image_tag @post_image, :image %>
-</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th>Name</th>
+    <th>Picture</th>
+    </tr>
+  </thead>
 
-<div>
-  <%= @post_image.picture_name %>
-</div>
+  <tbody>
+    <tr>
+      <td>
+        <%= @user.name %>
+      </td>
 
-<li>
-  <i class="fa fa-user"></i>By<a href="#">
-  <%= @post_image.user.name %></a>
-</li>
+      <td>
+        <%= attachment_image_tag @user, :profile_image_id, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg" %>
+      </td>
 
-<p>
-  <%= @post_image.caption %>
-</p>
+      <td>
+        <%= link_to "Édit", "#" %>
+      </td>
+    </tr>
+</tbody>
+</table>
