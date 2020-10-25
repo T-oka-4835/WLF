@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Picture</th>
+      <th>Title</th>
     </tr>
   </thead>
 
@@ -20,13 +21,38 @@
   </td>
 
   <td>
+    <%= @post_image.picture_name %>
+  </td>
+
+  <td><%= @post_image.post_comments.count %>Comments</td>
+
+  <td>
     <%= link_to "Edit", edit_post_image_path(@post_image) %>
   </td>
 
   <td>
     <%= link_to "Destroy", post_image_path(@post_image), method: :delete %>
   </td>
-
   </tr>
   </tbody>
 </table>
+
+<ol>
+  <% @post_image.post_comments.each do |post_comment| %>
+  <div><%= attachment_image_tag @user, :profile_image_id, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></div>
+  <div><%= post_comment.user.name %></div>
+  <span><%= post_comment.created_at.strftime('%Y/%m/%d') %></span>
+  <div><%= post_comment.comment %></div>
+  
+  <% if post_comment.user == current_user %>
+  <div>
+    <%= link_to "Destroy", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger" %>
+  </div>
+  <% end %>
+  <% end %>
+</ol>
+
+<%= form_with(model:[@post_image, @post_comment], local: true) do |f| %>
+<%= f.text_area :comment, rows:"5", class: "form-control", placeholder: "Comment" %>
+<%= f.submit "Send", class: "btn btn-lg  pull-right" %>
+<% end %>

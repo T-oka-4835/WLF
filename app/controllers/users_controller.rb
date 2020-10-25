@@ -11,5 +11,5 @@ class UsersController < ApplicationController
    private
    def post_image_params
     params.require(:post_image).permit(:picture_name, :image, :caption, :title )
-  end
+   end
 end

@@ -1,11 +1,11 @@
 <h1>We Love FootBall</h1>
-
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>picture</th>
       <th>Title</th>
+      <th>Caption</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +25,10 @@
 
   <td>
     <%= post_image.caption %>
+  </td>
+
+  <td>
+    <%= link_to "#{post_image.post_comments.count} Comments", post_image_path(post_image.id) %>
   </td>
 
   <td>
