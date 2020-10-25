@@ -27,6 +27,22 @@
   <td><%= @post_image.post_comments.count %>Comments</td>
 
   <td>
+  <% if @post_image.favorited_by?(current_user) %>
+    <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
+      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+      <%= @post_image.favorites.count %> Goods
+    <% end %>
+  </td>
+  <td>
+  <% else %>
+    <%= link_to post_image_favorites_path(@post_image), method: :post do %>
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+     <%= @post_image.favorites.count %> Goods
+  <% end %>
+  </td>
+<% end %>
+
+  <td>
     <%= link_to "Edit", edit_post_image_path(@post_image) %>
   </td>
 
@@ -43,7 +59,7 @@
   <div><%= post_comment.user.name %></div>
   <span><%= post_comment.created_at.strftime('%Y/%m/%d') %></span>
   <div><%= post_comment.comment %></div>
-  
+
   <% if post_comment.user == current_user %>
   <div>
     <%= link_to "Destroy", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete, class: "btn btn-danger" %>

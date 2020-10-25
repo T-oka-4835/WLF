@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get 'homes/about'
   resources :post_images do
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
   resources :users
